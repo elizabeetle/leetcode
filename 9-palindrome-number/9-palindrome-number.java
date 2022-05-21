@@ -1,23 +1,21 @@
 class Solution {
     public boolean isPalindrome(int x) {
-        
-        //using two pointers, compare two points; moving from front and back towards middle
-        //if matching, move to next pair
-        //if not matching, false
+
+//using two pointers, compare the beginning number to the ending number
+//transform the int into a char[]
         
         char[] nums = String.valueOf(x).toCharArray();
         
-        int pointer = 0;
-        int pointer2 = nums.length - 1;
+        int pointerIndex = 0;
+        int pointer2Index = nums.length - 1;
         
-        while(pointer < pointer2){
-            if(nums[pointer] != nums[pointer2])
+        while(pointerIndex < pointer2Index){
+            if(nums[pointerIndex] != nums[pointer2Index])
                 return false;
-            else
-                pointer +=1;
-                pointer2 -=1;
+            
+            pointerIndex += 1;
+            pointer2Index -= 1;
         }
-        
         return true;
     }
 }
